@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prime Agri Business &amp; Plantation</title>
+  <meta name="description"
+    content="Prime Agri Business & Plantation — sustainable agriculture, premium crops, and flexible investment plans in Sri Lanka." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            white: "var(--color-white)",
+            lime: "var(--color-accent-lime)",
+            green: {
+              DEFAULT: "var(--color-primary-green)",
+              dark: "var(--color-green-dark)",
+              mid: "var(--color-green-mid)",
+            },
+            ink: {
+              DEFAULT: "var(--color-text-primary)",
+              muted: "var(--color-text-muted)",
+              nav: "var(--color-nav-text)",
+            },
+            mint: {
+              surface: "var(--color-surface-mint)",
+              card: "var(--color-card-mint)",
+              check: "var(--color-icon-check)",
+            },
+            gold: "var(--color-gold)",
+          },
+          fontFamily: {
+            poppins: ["var(--font-poppins)"],
+            clash: ["var(--font-clash)"],
+          },
+          maxWidth: {
+            site: "var(--max-width)",
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-poppins);
+      color: var(--color-text-primary);
+    }
+
+    #site-header.is-scrolled .header-bar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .nav-link.is-active {
+      color: var(--color-white);
+      font-weight: 400;
+      background-color: var(--color-primary-green);
+    }
+
+    .nav-link.is-active:hover {
+      color: var(--color-white);
+    }
+
+    #mobile-nav {
+      transform: translateX(100%);
+      transition: transform var(--transition-base);
+    }
+
+    #mobile-nav.is-open {
+      transform: translateX(0);
+    }
+
+    .hero-overlay {
+      background: var(--color-hero-overlay);
+    }
+
+    .wave-divider path {
+      fill: var(--color-white);
+    }
+
+    .about-img-1 {
+      border-radius: 100px 0 100px 100px;
+    }
+
+    .about-img-2 {
+      border-radius: 50px 50px 50px 0;
+      border: 5px solid var(--color-white);
+    }
+
+    .about-img-3 {
+      border-radius: 80px 80px 0 50px;
+    }
+
+    .feature-box {
+      background: var(--color-surface-mint);
+      border-radius: var(--radius-card);
+    }
+
+    .feature-accent {
+      background: var(--color-accent-lime);
+      border-radius: var(--radius-card) 0 0 var(--radius-card);
+    }
+
+    .service-card {
+      background: var(--color-card-mint);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .carousel-dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 9999px;
+      background: var(--color-white);
+      opacity: 0.5;
+      transition: all var(--transition-base);
+    }
+
+    .carousel-dot.is-active {
+      width: 44px;
+      border-radius: 8px;
+      opacity: 1;
+      background: var(--color-accent-lime);
+    }
+
+    .plan-card {
+      background: var(--color-plan-card-bg);
+      border: 2px solid transparent;
+      transition: border-color var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .plan-card.is-selected,
+    .plan-card:hover {
+      border-color: var(--color-accent-lime);
+      box-shadow: 0 8px 32px rgba(40, 140, 46, 0.15);
+    }
+
+    .plan-badge {
+      background: var(--color-badge-bg);
+      color: var(--color-green-dark);
+    }
+
+    .plan-badge1 {
+      background: rgba(246, 219, 13, 0.12);
+      color: var(--color-gold);
+    }
+
+    .plan-badge2 {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--color-white);
+    }
+
+    .plan-badge3 {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--color-black);
+    }
+
+    .btn-primary {
+      background: var(--color-primary-green);
+      color: var(--color-white);
+      transition: background var(--transition-base), transform var(--transition-base);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-green-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-lime {
+      background: var(--color-accent-lime);
+      color: var(--color-nav-text);
+    }
+
+    .btn-lime:hover {
+      background: var(--color-green-mid);
+      color: var(--color-white);
+    }
+
+    .tier-row.is-highlighted {
+      background: var(--color-card-mint);
+    }
+
+    .form-input {
+      background: var(--color-input-bg);
+      border: 2px solid transparent;
+      transition: border-color var(--transition-base);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-primary-green);
+    }
+
+    .form-input::placeholder {
+      color: var(--color-placeholder);
+    }
+
+    .form-toast {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-nav-pill);
+      color: var(--color-white);
+      font-weight: 500;
+      z-index: 100;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: all var(--transition-slow);
+    }
+
+    .form-toast.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .form-toast.is-success {
+      background: var(--color-primary-green);
+    }
+
+    .form-toast.is-error {
+      background: #c0392b;
+    }
+
+    #video-modal {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-base);
+    }
+
+    #video-modal.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity var(--transition-slow), transform var(--transition-slow);
+    }
+
+    [data-reveal].is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery-cell {
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform var(--transition-base);
+    }
+
+    .gallery-cell:hover {
+      transform: scale(1.03);
+      z-index: 2;
+    }
+
+    .check-icon {
+      color: var(--color-accent-lime);
+    }
+  </style>
+</head>
+
+<body class="bg-white antialiased">
+  <!-- Header -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-3">
+      <div
+        class="header-bar flex items-center lg:justify-center justify-between gap-4 rounded-2xl px-2 py-2 transition-all duration-300">
+        <a href="#home" class="flex items-center gap-3 shrink-0">
+          <div class="bg-white rounded-bl-[20px] rounded-t-[20px] px-7 py-2 shadow-sm">
+            <img src="assets/images/logo.png" alt="Prime Agri logo" class="h-10 w-auto object-contain" width="120"
+              height="65" />
+          </div>
+        </a>
+
+        <nav
+          class="hidden lg:flex items-center bg-white rounded-tr-[20px] rounded-b-[20px] pl-6 pr-6 pr-2 py-2 shadow-sm max-w-4xl ml-4"
+          aria-label="Main">
+          <a href="#home" data-nav-link
+            class="nav-link font-clash text-nav text-ink-nav hover:text-green px-5 py-2 rounded-[10px] transition-colors mx-2">Home</a>
+          <a href="#about" data-nav-link
+            class="nav-link font-clash text-nav text-ink-nav hover:text-green px-4 py-2 rounded-[10px] transition-colors mx-2">About
+            Us</a>
+          <a href="#services" data-nav-link
+            class="nav-link font-clash text-nav text-ink-nav hover:text-green px-4 py-2 rounded-[10px] transition-colors mx-2">Services</a>
+          <a href="#projects" data-nav-link
+            class="nav-link font-clash text-nav text-ink-nav hover:text-green px-4 py-2 rounded-[10px] transition-colors mx-2">Projects</a>
+          <a href="#contact" data-nav-link
+            class="nav-link font-clash text-nav text-ink-nav hover:text-green px-4 py-2 rounded-[10px] transition-colors mx-2">Contact</a>
+          <a href="#contact"
+            class="ml-auto font-clash font-medium text-nav bg-green text-white px-6 py-2 hover:bg-green-dark transition-colors mx-2">Get
+            A Quate</a>
+        </nav>
+
+        <button id="nav-toggle" type="button" class="lg:hidden p-2 rounded-lg bg-white shadow-sm" aria-expanded="false"
+          aria-controls="mobile-nav" aria-label="Toggle menu">
+          <svg class="w-6 h-6 text-ink-nav" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav"
+      class="lg:hidden fixed inset-y-0 right-0 w-72 bg-white shadow-2xl z-50 p-6 flex flex-col gap-4 pt-24"
+      aria-label="Mobile">
+      <a href="#home" data-nav-link class="font-clash text-lg text-green font-medium">Home</a>
+      <a href="#about" data-nav-link class="font-clash text-lg">About Us</a>
+      <a href="#services" data-nav-link class="font-clash text-lg">Services</a>
+      <a href="#projects" data-nav-link class="font-clash text-lg">Projects</a>
+      <a href="#contact" data-nav-link class="font-clash text-lg">Contact</a>
+      <a href="#contact" class="btn-primary text-center py-3 rounded-lg font-clash mt-4">Get A Quate</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="relative min-h-screen flex flex-col justify-end overflow-hidden">
+      <img src="assets/images/hero-bg.png" alt="" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 hero-overlay"></div>
+
+      <div class="relative z-10 max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-32 top-[-130px] pb-32 text-center w-full">
+        <img src="assets/images/Clip_path.svg" alt=""
+          class="absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-48 object-cover item-center" />
+        <p class="font-poppins text-white text-body-lg max-w-3xl mx-auto mb-8 leading-snug" data-reveal>
+          PREMIUM HARVEST
+        </p>
+
+        <h1 class="font-poppins font-semibold text-white leading-tight mb-10" data-reveal>
+          <span class="block text-[length:var(--text-hero)]">Prime Agri</span>
+          <span class="block text-[length:var(--text-hero)]">
+            Business &amp; <span class="text-lime">Plantation</span>
+          </span>
+        </h1>
+
+        <div class="flex flex-wrap justify-center gap-6" data-reveal>
+          <a href="#plans" class="btn-primary font-poppins font-semibold text-lg px-10 py-3 rounded-[5px]">Explore
+            Plans</a>
+          <a href="#contact"
+            class="font-poppins font-semibold text-lg px-10 py-3 rounded-[5px] border-2 border-white text-white hover:bg-white hover:text-green transition-colors">Invest
+            with Us</a>
+        </div>
+      </div>
+
+      <img src="assets/images/Union.svg" alt="Plantation field"
+        class="wave-divider absolute bottom-0 left-0 w-full h-22 z-10" />
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-32">
+        <div class="grid place-items-center text-center mb-12 lg:hidden" data-reveal>
+          <img src="assets/images/small_logo.png" alt=""
+            class="w-24 h-auto object-contain mx-auto mb-2 display-block" />
+          <p class="text-green font-poppins font-semibold text-body-lg text-left mb-2" data-reveal>About Us</p>
+          <h2 class="font-poppins font-semibold text-black text-h2 text-left mb-6" data-reveal>We'll Help You Grow</h2>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="relative w-full aspect-[531/412] max-w-[531px] mx-auto overflow-visible" data-reveal>
+            <div class="absolute top-0 left-0 w-[49.34%] h-full bg-green rounded-tl-[100px] rounded-b-[100px] z-10">
+            </div>
+            <div
+              class="absolute top-[23.69%] left-[42.58%] w-[37.85%] h-[70.63%] bg-green rounded-t-[50px] rounded-br-[50px] border-[3px] border-white shadow-lg z-20">
+            </div>
+            <div
+              class="absolute top-0 left-[68.1%] w-[33.89%] h-[69.41%] bg-green rounded-tl-[100px] rounded-t-[100px] z-10">
+            </div>
+          </div>
+
+          <div>
+            <div class="hidden lg:block" data-reveal>
+              <img src="assets/images/small_logo.png" alt=""
+                class="w-[72px] h-auto object-contain mb-2 display-block" />
+              <p class="text-green font-poppins font-semibold text-body-lg text-left mb-2" data-reveal>About Us</p>
+              <h2 class="font-poppins font-semibold text-black text-h2 text-left mb-6" data-reveal>We'll Help You Grow
+              </h2>
+            </div>
+            <p class="text-black text-body-lg leading-snug mb-8" data-reveal>
+              Prime Agri Business &amp; Plantation (Pvt) Ltd is a forward-thinking agriculture company dedicated to
+              enriching the environment and boosting Sri Lanka's economy through sustainable farming. We are committed
+              to modern, adventurous practices.
+            </p>
+
+            <div class="feature-box relative overflow-hidden" data-reveal>
+              <div class="feature-accent absolute left-0 top-0 bottom-0 w-4"></div>
+              <ul class="py-6 px-8 space-y-4">
+                <li class="flex items-start gap-3">
+                  <svg class="check-icon w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                  </svg>
+                  <span class="text-body-lg text-black">Sustainable Farming Practices</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="check-icon w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                  </svg>
+                  <span class="text-body-lg text-black">Export Quality Pineapples &amp; King Coconuts</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="check-icon w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                  </svg>
+                  <span class="text-body-lg text-black">Modern Plantation Management</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="check-icon w-5 h-5 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                  </svg>
+                  <span class="text-body-lg text-black">Responsible Natural Resource Stewardship</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <!-- Services Section -->
+    <section id="services" class="relative py-20 lg:py-12 overflow-hidden">
+      <img src="assets/images/services-bg-407ddd.png" alt="" class="absolute inset-0 w-full h-[50%] object-cover" />
+      <div class="absolute inset-0 bg-[var(--color-overlay-30)] h-[50%]"></div>
+
+      <div class="relative z-10 max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+        <img src="assets/images/small_logo.png" alt="" class="w-24 h-auto object-contain mx-auto mb-2 block" />
+        <p class="w-max mx-auto text-center text-white bg-lime/20 text-green-dark font-poppins font-semibold rounded-full text-small px-4 py-1 mb-4"
+          data-reveal>
+          Our Core Services
+        </p>
+        <h2
+          class="text-center text-white font-poppins font-medium text-[24px] md:text-[28px] max-w-3xl mx-auto mb-12 leading-snug px-2"
+          data-reveal>
+          Empowering the future of agriculture through integrity, excellence, and sustainable innovation.
+        </h2>
+      </div>
+
+      <!-- Carousel Wrapper -->
+      <div class="flex justify-center w-full px-4">
+        <div id="services-carousel" class="overflow-hidden w-full max-w-[1192px] relative" data-reveal>
+
+          <!-- Track: Mobile වලදී touch swipe කරන්න පුළුවන්, Desktop වලදී JS වලින් slide වෙනවා -->
+          <div id="services-track"
+            class="flex gap-6 transition-transform duration-500 ease-out w-full lg:w-max overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory scrollbar-none pb-4">
+
+            <!-- Card 1 සිට 6 වෙනකම් (සේරම එකම විදිහට flex-shrink නොවී තියෙන්න shrink-0 දාලා තියෙන්නේ) -->
+            <article
+              class="service-card shrink-0 w-[280px] snap-center rounded-t-[20px] rounded-bl-[20px] bg-[#F6FAF6] p-6 flex flex-col relative border-b-[6px] border-[#72E615] shadow-sm">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-[70px] h-[70px] flex-shrink-0"><img src="assets/images/icon-plantation.png" alt=""
+                    class="w-full h-full object-contain" /></div>
+                <h3 class="font-poppins font-semibold text-[20px] leading-tight text-[#333333]">Plantation Management
+                </h3>
+              </div>
+              <p class="text-[#666666] text-[15px] text-center flex-1 leading-relaxed mb-6">Expertise in sustainable
+                crop diversification, agroforestry, and soil enrichment.</p>
+              <a href="#contact"
+                class="mt-auto text-black font-bold text-[16px] flex items-center justify-center gap-2 hover:opacity-80 transition-opacity">
+                Read More
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="12" fill="black" />
+                  <path d="M10.5 7.5L15 12L10.5 16.5" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+            </article>
+
+            <!-- Card 2 -->
+            <article
+              class="service-card shrink-0 w-[280px] snap-center rounded-t-[20px] rounded-bl-[20px] bg-[#F6FAF6] p-6 flex flex-col relative border-b-[6px] border-[#72E615] shadow-sm">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-[70px] h-[70px] flex-shrink-0"><img src="assets/images/icon-plantation.png" alt=""
+                    class="w-full h-full object-contain" /></div>
+                <h3 class="font-poppins font-semibold text-[20px] leading-tight text-[#333333]">Plantation Management
+                </h3>
+              </div>
+              <p class="text-[#666666] text-[15px] text-center flex-1 leading-relaxed mb-6">Expertise in sustainable
+                crop diversification, agroforestry, and soil enrichment.</p>
+              <a href="#contact"
+                class="mt-auto text-black font-bold text-[16px] flex items-center justify-center gap-2 hover:opacity-80 transition-opacity">Read
+                More...</a>
+            </article>
+
+            <!-- Card 3 -->
+            <article
+              class="service-card shrink-0 w-[280px] snap-center rounded-t-[20px] rounded-bl-[20px] bg-[#F6FAF6] p-6 flex flex-col relative border-b-[6px] border-[#72E615] shadow-sm">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-[70px] h-[70px] flex-shrink-0"><img src="assets/images/icon-plantation.png" alt=""
+                    class="w-full h-full object-contain" /></div>
+                <h3 class="font-poppins font-semibold text-[20px] leading-tight text-[#333333]">Plantation Management
+                </h3>
+              </div>
+              <p class="text-[#666666] text-[15px] text-center flex-1 leading-relaxed mb-6">Expertise in sustainable
+                crop diversification, agroforestry, and soil enrichment.</p>
+              <a href="#contact"
+                class="mt-auto text-black font-bold text-[16px] flex items-center justify-center gap-2 hover:opacity-80 transition-opacity">Read
+                More...</a>
+            </article>
+
+            <!-- Card 4 -->
+            <article
+              class="service-card shrink-0 w-[280px] snap-center rounded-t-[20px] rounded-bl-[20px] bg-[#F6FAF6] p-6 flex flex-col relative border-b-[6px] border-[#72E615] shadow-sm">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-[70px] h-[70px] flex-shrink-0"><img src="assets/images/icon-plantation.png" alt=""
+                    class="w-full h-full object-contain" /></div>
+                <h3 class="font-poppins font-semibold text-[20px] leading-tight text-[#333333]">Plantation Management
+                </h3>
+              </div>
+              <p class="text-[#666666] text-[15px] text-center flex-1 leading-relaxed mb-6">Expertise in sustainable
+                crop diversification, agroforestry, and soil enrichment.</p>
+              <a href="#contact"
+                class="mt-auto text-black font-bold text-[16px] flex items-center justify-center gap-2 hover:opacity-80 transition-opacity">Read
+                More...</a>
+            </article>
+
+            <!-- Card 5 -->
+            <article
+              class="service-card shrink-0 w-[280px] snap-center rounded-t-[20px] rounded-bl-[20px] bg-[#F6FAF6] p-6 flex flex-col relative border-b-[6px] border-[#72E615] shadow-sm">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-[70px] h-[70px] flex-shrink-0"><img src="assets/images/icon-plantation.png" alt=""
+                    class="w-full h-full object-contain" /></div>
+                <h3 class="font-poppins font-semibold text-[20px] leading-tight text-[#333333]">Plantation Management
+                </h3>
+              </div>
+              <p class="text-[#666666] text-[15px] text-center flex-1 leading-relaxed mb-6">Expertise in sustainable
+                crop diversification, agroforestry, and soil enrichment.</p>
+              <a href="#contact"
+                class="mt-auto text-black font-bold text-[16px] flex items-center justify-center gap-2 hover:opacity-80 transition-opacity">Read
+                More...</a>
+            </article>
+
+            <!-- Card 6 -->
+            <article
+              class="service-card shrink-0 w-[280px] snap-center rounded-t-[20px] rounded-bl-[20px] bg-[#F6FAF6] p-6 flex flex-col relative border-b-[6px] border-[#72E615] shadow-sm">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-[70px] h-[70px] flex-shrink-0"><img src="assets/images/icon-plantation.png" alt=""
+                    class="w-full h-full object-contain" /></div>
+                <h3 class="font-poppins font-semibold text-[20px] leading-tight text-[#333333]">Plantation Management
+                </h3>
+              </div>
+              <p class="text-[#666666] text-[15px] text-center flex-1 leading-relaxed mb-6">Expertise in sustainable
+                crop diversification, agroforestry, and soil enrichment.</p>
+              <a href="#contact"
+                class="mt-auto text-black font-bold text-[16px] flex items-center justify-center gap-2 hover:opacity-80 transition-opacity">Read
+                More...</a>
+            </article>
+
+          </div>
+
+          <!-- DESKTOP DOTS (2 Dots - Hidden on Mobile/Tablet) -->
+          <div class="hidden lg:flex justify-center gap-3 mt-10">
+            <button type="button" data-dot-desktop="0"
+              class="w-3 h-3 rounded-full bg-green-500 transition-colors is-active" aria-label="Slide 1"></button>
+            <button type="button" data-dot-desktop="1" class="w-3 h-3 rounded-full bg-gray-300 transition-colors"
+              aria-label="Slide 2"></button>
+          </div>
+
+          <!-- MOBILE/TABLET DOTS (4 Dots - Hidden on Desktop) -->
+          <div class="flex lg:hidden justify-center gap-3 mt-10">
+            <button type="button" data-dot-mobile="0"
+              class="w-3 h-3 rounded-full bg-green-500 transition-colors is-active" aria-label="Slide 1"></button>
+            <button type="button" data-dot-mobile="1" class="w-3 h-3 rounded-full bg-gray-300 transition-colors"
+              aria-label="Slide 2"></button>
+            <button type="button" data-dot-mobile="2" class="w-3 h-3 rounded-full bg-gray-300 transition-colors"
+              aria-label="Slide 3"></button>
+            <button type="button" data-dot-mobile="3" class="w-3 h-3 rounded-full bg-gray-300 transition-colors"
+              aria-label="Slide 4"></button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Care / Investment intro -->
+    <section class="py-20 lg:py-28 bg-white relative overflow-hidden">
+
+      <img src="assets/images/care-left.png" alt=""
+        class="hidden lg:block absolute left-0 bottom-[-20px] w-[250px] opacity-80 pointer-events-none" />
+
+      <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-48 relative z-10 sm:mb-[150px]">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+          <div class="relative" data-reveal>
+            <div class="flex flex-col items-center text-center mb-4 lg:items-start lg:text-left">
+              <img src="assets/images/small_logo.png" alt="" class="w-24 h-auto object-contain mb-2" />
+              <span
+                class="inline-block bg-[#72E615]/10 text-green-700 font-poppins font-semibold rounded-full px-4 py-1 text-sm">
+                Care Features
+              </span>
+              <h2 class="font-poppins font-bold text-3xl md:text-4xl lg:text-[28px] text-black mb-8 leading-tight">
+                Care for Investments<br />Investment Plan Features
+              </h2>
+            </div>
+
+
+            <ul class="space-y-6">
+              <li class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-6 h-6 rounded-full bg-[#72E615] flex items-center justify-center text-white mt-1 shadow-sm">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <p class="text-base md:text-lg text-[#333333] leading-relaxed">
+                  <strong class="font-semibold">Prime Gold Plan:</strong> Monthly profits starting from LKR 30,000 for
+                  LKR 1,000,000 contribution.
+                </p>
+              </li>
+
+              <li class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-6 h-6 rounded-full bg-[#72E615] flex items-center justify-center text-white mt-1 shadow-sm">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <p class="text-base md:text-lg text-[#333333] leading-relaxed">
+                  <strong class="font-semibold">Prime Double Premium Plan:</strong> LKR 100,000 investment returns LKR
+                  200,000 after 3 years.
+                </p>
+              </li>
+
+              <li class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-6 h-6 rounded-full bg-[#72E615] flex items-center justify-center text-white mt-1 shadow-sm">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <p class="text-base md:text-lg text-[#333333] leading-relaxed">
+                  <strong class="font-semibold">Prime Double Benefits Plan:</strong> Minimum Monthly investment of LKR
+                  5,000.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="relative w-full h-[250px]" data-reveal>
+            <button id="video-open" type="button"
+              class="group relative w-full aspect-[16/10] sm:aspect-video rounded-[24px] overflow-hidden shadow-lg focus:outline-none focus:ring-4 focus:ring-[#72E615]">
+
+              <img src="assets/images/video-thumbnail.png" alt="Plantation video thumbnail"
+                class="w-full h-full object-cover" />
+
+              <span
+                class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition-colors">
+                <span
+                  class="w-16 h-16 rounded-full bg-[#72E615] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                  <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+              </span>
+
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <img src="assets/images/care-right.png" alt=""
+        class="hidden lg:block absolute right-0 top-[-20px] w-[250px] opacity-80 pointer-events-none" />
+    </section>
+
+    <!-- Investment Plans -->
+    <section id="plans" class="relative py-20 lg:py-12 overflow-hidden">
+      <img src="assets/images/services-bg-407ddd.png" alt="" class="absolute inset-0 w-full lg:h-[50%] md:h-[150%] sm:h-[200%] object-cover" />
+      <div class="absolute inset-0 bg-[var(--color-overlay-30)] lg:h-[50%] md:h-[150%] sm:h-[200%]"></div>
+
+      <div class="relative z-10 max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+        <img src="assets/images/small_logo.png" alt="" class="w-24 h-auto object-contain mx-auto mb-2 display-block" />
+        <p class="text-center text-white bg-lime/20 text-green-dark font-poppins font-semibold rounded-full text-small mb-4"
+          data-reveal>Investment Plans</p>
+        <h2 class="text-center text-white font-poppins font-medium text-[28px] max-w-3xl mx-auto mb-12 leading-snug"
+          data-reveal>
+          Empowering the future of agriculture through integrity, excellence, and sustainable innovation.
+        </h2>
+      </div>
+
+      <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+        <article data-plan-card="gold-monthly" data-scroll-to="#tiers"
+          class="plan-card rounded-2xl p-6 lg:p-8 cursor-pointer relative is-selected bg-[#000000]/[0.06] backdrop-blur-xl"
+          data-reveal>
+          <span class="plan-badge1 absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full">Most
+            popular</span>
+          <h3 class="font-poppins font-semibold text-body-lg text-white mb-2">Prime Gold (Monthly)</h3>
+          <p class="font-poppins font-semibold text-[34px] text-white">LKR 1M <span
+              class="text-body-lg font-normal text-black text-[14px]">/ one-time</span></p>
+          <p class="text-white text-small mt-4 mb-6">Lump-sum investment with flexible maturity & monthly profit options
+          </p>
+
+          <ul class="space-y-3 text-small text-black mb-8">
+            <li class="flex gap-2"><span class="text-lime">✓</span> Fixed 1,000,000 LKR investment principal</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> 6, 12, 18, 24, 30, & 36-month terms</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> Monthly profit payouts up to LKR 40,000</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> Full LKR 1M returned at maturity</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> 100% capital guarantee + profit security</li>
+          </ul>
+          <button type="button" data-scroll-to="#tiers"
+            class="bg-gold w-full py-3 rounded-xl font-poppins font-semibold text-white">Explore Tiers</button>
+        </article>
+
+        <article data-plan-card="gold-maturity" data-scroll-to="#tiers"
+          class="plan-card rounded-2xl p-6 lg:p-8 cursor-pointer relative is-selected bg-[#000000]/[0.06] backdrop-blur-xl"
+          data-reveal>
+          <span class="plan-badge absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full">High Yield</span>
+          <h3 class="font-poppins font-semibold text-body-lg text-white mb-2">Prime Gold (Maturity)</h3>
+          <p class="font-poppins font-semibold text-[34px] text-white">LKR 1M <span
+              class="text-body-lg font-normal text-black text-[14px]">/ one-time</span></p>
+          <p class="text-white text-small mt-4 mb-6">Lump-sum investment optimized for maximum compounded growth at
+            maturity</p>
+
+          <ul class="space-y-3 text-small text-black mb-8">
+            <li class="flex gap-2"><span class="text-lime">✓</span> Fixed 1,000,000 LKR investment principal</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> 6, 12, 24, and 36-month maturity options</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> Total return at maturity up to LKR 2.5M</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> Tiered returns starting from LKR 1.2M</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> 100% capital guarantee with fully compounded returns
+            </li>
+          </ul>
+          <button type="button" data-scroll-to="#tiers"
+            class="bg-lime w-full py-3 rounded-xl font-poppins font-semibold text-white border border-lime">Explore
+            Tiers</button>
+        </article>
+
+        <article data-plan-card="platinum" data-scroll-to="#tiers"
+          class="plan-card rounded-2xl p-6 lg:p-8 cursor-pointer relative is-selected bg-[#000000]/[0.06] backdrop-blur-xl"
+          data-reveal>
+          <span class="plan-badge2 absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full">Best
+            Value</span>
+          <h3 class="font-poppins font-semibold text-body-lg text-white mb-2">Double Platinum</h3>
+          <p class="font-poppins font-semibold text-[34px] text-white">LKR 100k+ <span
+              class="text-body-lg font-normal text-black text-[14px]">/ one-time</span></p>
+          <p class="text-white text-small mt-4 mb-6">Premium lump-sum investment plan designed to safely double your
+            wealth</p>
+
+          <ul class="space-y-3 text-small text-black mb-8">
+            <li class="flex gap-2"><span class="text-lime">✓</span> Flexible entry from 100k up to 1M LKR</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> Fixed investment duration of 3 Years</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> Guaranteed 100% return on investment</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> Maturity payouts up to LKR 2,000,000</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> 100% risk-free capital doubling guarantee</li>
+          </ul>
+          <button type="button" data-scroll-to="#tiers"
+            class="bg-white w-full py-3 rounded-xl font-poppins font-semibold text-black border border-black">Explore
+            Tiers</button>
+        </article>
+
+        <article data-plan-card="benefits" data-scroll-to="#tiers"
+          class="plan-card rounded-2xl p-6 lg:p-8 cursor-pointer relative is-selected bg-[#000000]/[0.06] backdrop-blur-xl"
+          data-reveal>
+          <span class="plan-badge3 absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full">Smart
+            Savings</span>
+          <h3 class="font-poppins font-semibold text-body-lg text-white mb-2">Double Benefits</h3>
+          <p class="font-poppins font-semibold text-[34px] text-white">LKR 5k+ <span
+              class="text-body-lg font-normal text-black text-[14px]">/ monthly</span></p>
+          <p class="text-white text-small mt-4 mb-6">Systematic monthly installment plan with doubled returns after 5
+            years</p>
+
+          <ul class="space-y-3 text-small text-black mb-8">
+            <li class="flex gap-2"><span class="text-lime">✓</span> Affordable monthly contributions (5k - 50k)</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> Consistent monthly installment period of 36 Months
+            </li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> Total accumulation up to LKR 1,800,000</li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> Guaranteed 2x total return paid out after 5 Years
+            </li>
+            <li class="flex gap-2"><span class="text-lime">✓</span> 100% capital guarantee with doubled benefits</li>
+          </ul>
+          <button type="button" data-scroll-to="#tiers"
+            class="bg-black w-full py-3 rounded-xl font-poppins font-semibold text-white border border-black">Explore
+            Tiers</button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Tiers table -->
+    <section id="tiers" class="py-16 lg:py-20 bg-white">
+      <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10" data-reveal>
+        <img src="assets/images/small_logo.png" alt="" class="w-24 h-auto object-contain mx-auto mb-2 display-block" />
+        <h2 id="tier-section-title" class="font-poppins font-semibold text-3xl md:text-4xl text-black">Prime <span
+            class="text-lime">Gold</span>
+          (Monthly) Tiers</h2>
+        <p class="text-gray-500 mt-3">Review specific numbers for your selection below.</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-4">
+
+        <div data-tier-panel="gold-monthly"
+          class="tier-panel overflow-x-auto rounded-2xl border border-gray-200 shadow-sm transition-opacity duration-300"
+          data-reveal>
+          <table class="w-full text-left text-sm md:text-base">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="p-4 font-semibold text-black">Maturity Period</th>
+                <th class="p-4 font-semibold text-black">Investment Amount</th>
+                <th class="p-4 font-semibold text-black">Monthly Profit Pay</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">06 Months</td>
+                <td class="p-4 font-medium">LKR 1,000,000</td>
+                <td class="p-4 font-medium text-[#72E615]">LKR 30,000 / mo</td>
+              </tr>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">12 Months</td>
+                <td class="p-4 font-medium">LKR 1,000,000</td>
+                <td class="p-4 font-medium text-[#72E615]">LKR 33,333 / mo</td>
+              </tr>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">24 Months</td>
+                <td class="p-4 font-medium">LKR 1,000,000</td>
+                <td class="p-4 font-medium text-[#72E615]">LKR 36,666 / mo</td>
+              </tr>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">36 Months</td>
+                <td class="p-4 font-medium">LKR 1,000,000</td>
+                <td class="p-4 font-medium text-[#72E615]">LKR 40,000 / mo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div data-tier-panel="gold-maturity"
+          class="tier-panel hidden overflow-x-auto rounded-2xl border border-gray-200 shadow-sm transition-opacity duration-300">
+          <table class="w-full text-left text-sm md:text-base">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="p-4 font-semibold text-black">Maturity Period</th>
+                <th class="p-4 font-semibold text-black">Investment Amount</th>
+                <th class="p-4 font-semibold text-black">Total Return at Maturity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">06 Months</td>
+                <td class="p-4 font-medium">LKR 1,000,000</td>
+                <td class="p-4 font-medium text-green-600">LKR 1,200,000</td>
+              </tr>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">12 Months</td>
+                <td class="p-4 font-medium">LKR 1,000,000</td>
+                <td class="p-4 font-medium text-green-600">LKR 1,420,000</td>
+              </tr>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">24 Months</td>
+                <td class="p-4 font-medium">LKR 1,000,000</td>
+                <td class="p-4 font-medium text-green-600">LKR 1,920,000</td>
+              </tr>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">36 Months</td>
+                <td class="p-4 font-medium">LKR 1,000,000</td>
+                <td class="p-4 font-medium text-green-600">LKR 2,500,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div data-tier-panel="platinum"
+          class="tier-panel hidden overflow-x-auto rounded-2xl border border-gray-200 shadow-sm transition-opacity duration-300">
+          <table class="w-full text-left text-sm md:text-base">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="p-4 font-semibold text-black">Investment Amount</th>
+                <th class="p-4 font-semibold text-black">Duration</th>
+                <th class="p-4 font-semibold text-black">Guaranteed 2X Return</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">LKR 100,000</td>
+                <td class="p-4 font-medium">36 Months</td>
+                <td class="p-4 font-medium text-blue-600">LKR 200,000</td>
+              </tr>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">LKR 500,000</td>
+                <td class="p-4 font-medium">36 Months</td>
+                <td class="p-4 font-medium text-blue-600">LKR 1,000,000</td>
+              </tr>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">LKR 1,000,000</td>
+                <td class="p-4 font-medium">36 Months</td>
+                <td class="p-4 font-bold text-blue-700">LKR 2,000,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div data-tier-panel="benefits"
+          class="tier-panel hidden overflow-x-auto rounded-2xl border border-gray-200 shadow-sm transition-opacity duration-300">
+          <table class="w-full text-left text-sm md:text-base">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="p-4 font-semibold text-black">Monthly Contribution</th>
+                <th class="p-4 font-semibold text-black">Total Contribution (36 Months)</th>
+                <th class="p-4 font-semibold text-black">Return after 5 Years (2X)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">LKR 5,000 / mo</td>
+                <td class="p-4 font-medium">LKR 180,000</td>
+                <td class="p-4 font-medium text-purple-600">LKR 360,000</td>
+              </tr>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">LKR 10,000 / mo</td>
+                <td class="p-4 font-medium">LKR 360,000</td>
+                <td class="p-4 font-medium text-purple-600">LKR 720,000</td>
+              </tr>
+              <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                <td class="p-4">LKR 50,000 / mo</td>
+                <td class="p-4 font-medium">LKR 1,800,000</td>
+                <td class="p-4 font-bold text-purple-700">LKR 3,600,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="projects" class="py-16 lg:py-12 bg-mint-card">
+      <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 text-center mb-24" data-reveal>
+        <img src="assets/images/small_logo.png" alt="" class="w-24 h-auto object-contain mx-auto mb-2 display-block" />
+        <h2 class="font-poppins font-semibold text-h1-section text-black text-3xl md:text-4xl">Excellence in <span
+            class="text-lime">Every</span> Harvest</h2>
+        <p class="text-ink-muted text-body-lg max-w-4xl mx-auto mt-4 leading-snug">
+          A glimpse into our world of premium agricultural standards. Discover how we combine traditional farming with
+          modern innovation to cultivate high-quality Pineapple and King Coconut exports.
+        </p>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-9 gap-3 items-start mt-[150px] z-10 relative"
+        data-reveal>
+
+        <div class="flex flex-col gap-3 md:mt-36">
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] aspect-[4/5] bg-gray-100">
+            <img src="assets/images/king-coconut-left.png" alt="King Coconut"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] aspect-[4/5] bg-gray-100">
+            <img src="assets/images/pineapple-hand.png" alt="Pineapple Hand"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 md:mt-24">
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] aspect-[2/2] bg-gray-100">
+            <img src="assets/images/pineapple-field-1.png" alt="Pineapple Field"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] aspect-[2/2] bg-gray-100">
+            <img src="assets/images/palm-grove.png" alt="Palm Grove"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] aspect-[2/2] bg-gray-100">
+            <img src="assets/images/pineapple-close-1.png" alt="Pineapple Close-up"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 md:mt-14">
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] h-[220px] md:h-[360px] bg-gray-100">
+            <img src="assets/images/care-left.png" alt="Landscape Palms"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 md:-mt-4">
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] h-[240px] md:h-[400px] bg-gray-100">
+            <img src="assets/images/pineapple-plant.png" alt="Pineapple Plant"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 md:-mt-16">
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] h-[260px] md:h-[440px] bg-gray-100">
+            <img src="assets/images/care-right.png" alt="Plantation Road"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 md:-mt-4">
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] h-[240px] md:h-[400px] bg-gray-100">
+            <img src="assets/images/king-coconut-bunch.png" alt="King Coconut Bunch"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 md:mt-14">
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] h-[220px] md:h-[360px] bg-gray-100">
+            <img src="assets/images/care-left.png" alt="Landscape Palms"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 md:mt-24">
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] aspect-[2/2] bg-gray-100">
+            <img src="assets/images/pineapple-field-1.png" alt="Pineapple Field"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] aspect-[2/2] bg-gray-100">
+            <img src="assets/images/palm-grove.png" alt="Palm Grove"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] aspect-[2/2] bg-gray-100">
+            <img src="assets/images/pineapple-close-1.png" alt="Pineapple Close-up"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 md:mt-36">
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] aspect-[4/5] bg-gray-100">
+            <img src="assets/images/king-coconut-left.png" alt="King Coconut"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="overflow-hidden rounded-2xl md:rounded-[24px] aspect-[4/5] bg-gray-100">
+            <img src="assets/images/pineapple-hand.png" alt="Pineapple Hand"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="max-w-2xl mx-auto text-center mt-[-100px] px-4 z-20 relative" data-reveal>
+        <div
+          class="inline-flex items-center justify-center border border-gray-300 px-5 py-1 rounded-[8px] text-sm font-medium text-black mb-4 tracking-wide uppercase bg-gray-50">
+          plantations
+        </div>
+        <p class="font-poppins text-gray-600 text-sm md:text-base font-medium leading-relaxed">
+          Our plantation are spread across prime locations in Sri Lanka. Kasagala, Pinthanna, and more.
+          We cultivate tea, rubber, and cinnamon using sustainable and eco-friendly practices.
+        </p>
+      </div>
+    </section>
+
+    <!-- Plantations -->
+    <section id="contact" class="py-16 lg:py-20 bg-white text-start relative overflow-hidden">
+
+      <div class="max-w-site mx-auto px-4 mb-16" data-reveal>
+        <img src="assets/images/small_logo.png" alt="" class="w-24 h-auto object-contain mx-auto mb-2 display-block" />
+        <h2 class="font-poppins font-semibold text-h1-section text-center mb-4 text-3xl md:text-4xl">Let's <span
+            class="text-lime">Talk</span> Growth</h2>
+        <p class="text-ink-muted max-w-xl mx-auto text-center">
+          Fill out the form and our team will get back to you within 24 hours
+          to schedule your free consultation.
+        </p>
+      </div>
+
+      <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-lg" data-reveal>
+
+          <form id="contact-form" class="p-8 lg:p-10 space-y-5">
+            <p class="text-green font-semibold text-start">Contact Us</p>
+            <h2 class="font-poppins font-semibold text-3xl text-black">Get In Touch</h2>
+            <div>
+              <label for="name" class="block text-small font-medium mb-2">Name</label>
+              <input id="name" name="name" type="text" required placeholder="Your Name..."
+                class="form-input w-full px-4 py-3 rounded-xl" />
+            </div>
+            <div>
+              <label for="email" class="block text-small font-medium mb-2">Email</label>
+              <input id="email" name="email" type="email" required placeholder="example@youmail.com"
+                class="form-input w-full px-4 py-3 rounded-xl" />
+            </div>
+            <div>
+              <label for="subject" class="block text-small font-medium mb-2">Subject</label>
+              <input id="subject" name="subject" type="text" placeholder="Title"
+                class="form-input w-full px-4 py-3 rounded-xl" />
+            </div>
+            <div>
+              <label for="message" class="block text-small font-medium mb-2">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Type Here"
+                class="form-input w-full px-4 py-3 rounded-xl resize-none"></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full py-3.5 rounded-xl font-poppins font-semibold text-lg">Send
+              Now</button>
+          </form>
+        </div>
+
+        <div data-reveal>
+
+          <p class="text-body-lg text-ink-muted leading-snug mb-10">
+            Have questions about our sustainable plantation projects or looking for a reliable partner in agricultural
+            exports? We are here to help. Reach out to the Prime Agri team today to discuss how we can grow together.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-8 mb-8">
+
+            <div class="text-center flex flex-col items-center">
+              <div
+                class="w-16 h-16 rounded-full bg-mint-card flex items-center justify-center mb-3 text-green text-2xl">
+                <img src="assets/images/call.svg" alt="Phone Icon"
+                  class="w-20 h-auto object-contain mx-auto mb-2 display-block filter-green" />
+              </div>
+              <h3 class="font-semibold text-lg">Phone Number</h3>
+              <a href="tel:+94717558895" class="text-ink-muted hover:text-green transition-colors">+94 71 755 8895</a>
+            </div>
+
+            <div class="text-center flex flex-col items-center">
+              <div
+                class="w-16 h-16 rounded-full bg-mint-card flex items-center justify-center mb-3 text-green text-2xl">
+                <img src="assets/images/email.svg" alt="Email Icon"
+                  class="w-20 h-auto object-contain mx-auto mb-2 display-block filter-green" />
+              </div>
+              <h3 class="font-semibold text-lg">Email Address</h3>
+              <a href="mailto:primeagriplantation@gmail.com"
+                class="text-ink-muted hover:text-green transition-colors break-all">primeagriplantation@gmail.com</a>
+            </div>
+
+            <div class="text-center flex flex-col items-center">
+              <div
+                class="w-16 h-16 rounded-full bg-mint-card flex items-center justify-center mb-3 text-green text-2xl">
+                💬
+              </div>
+              <h3 class="font-semibold text-lg">WhatsApp</h3>
+              <a href="https://wa.me/94772558895" class="text-ink-muted hover:text-green transition-colors">+94 77 255
+                8895</a>
+            </div>
+
+            <div class="text-center flex flex-col items-center">
+              <div
+                class="w-16 h-16 rounded-full bg-mint-card flex items-center justify-center mb-3 text-green text-2xl">
+                📍
+              </div>
+              <h3 class="font-semibold text-lg">Our Office</h3>
+              <p class="text-ink-muted">55/10, Waturugama Road, Miriswatta</p>
+            </div>
+
+          </div>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.456325074766!2d80.01526017568193!3d7.072973316532822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2fc02ed8ad605%3A0x1ea8247449040ad7!2s55%2C%2010%20Wathurugama%20Rd%2C%20Gampaha!5e0!3m2!1sen!2slk!4v1779361697131!5m2!1sen!2slk"
+            class="w-full rounded-2xl shadow-md h-80 md:h-[400px] border-0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / Team -->
+    <section class="bg-[#419713] text-white py-16 lg:py-20 font-poppins">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+
+        <div data-reveal class="space-y-6">
+          <h2 class="font-semibold text-4xl md:text-3xl tracking-tight">
+            Ready to <span class="text-[#72E615]">Invest</span>?
+          </h2>
+          <p class="text-white/90 text-base md:text-[16px] max-w-lg leading-relaxed">
+            Connect with our management team to secure your plot today.
+          </p>
+
+          <div class="border border-white/20 bg-white/5 rounded-3xl p-8 space-y-5 backdrop-blur-sm">
+            <div class="flex items-center gap-4 text-base md:text-[16px]">
+              <div class="text-[#72E615] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M2.25 6.622s.138-1.207 1.13-2.185c1.111-1.096 2.873-1.096 3.985 0l1.114 1.1c1.112 1.096 1.112 2.863 0 3.959L7.361 10.71c.48.971 1.25 1.745 2.217 2.23l1.114-1.127c1.112-1.096 2.874-1.096 3.985 0l1.114 1.1c1.112 1.096 1.112 2.863 0 3.959l-1.123 1.111c-1.012 1-2.23.832-2.23.832m-6.326-14.13c-.988 0-1.84.542-2.269 1.342m12.35 12.34c.8-.429 1.342-1.28 1.342-2.268m0 0a3.374 3.374 0 0 0-3.374-3.375M18.75 3c2.9 0 5.25 2.35 5.25 5.25a5.222 5.222 0 0 1-1.02 3.111" />
+                </svg>
+              </div>
+              <span class="font-medium tracking-wide">071 755 8895 / 077 255 8895</span>
+            </div>
+
+            <div class="flex items-center gap-4 text-base md:text-[16px]">
+              <div class="text-[#72E615] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0l-7.5-4.615a２.２５ ２.２５ ０ ０１－１．０７－１．９１６Ｖ６．７５" />
+                </svg>
+              </div>
+              <span class="font-medium">primeagriplantation@gmail.com</span>
+            </div>
+
+            <div class="flex items-center gap-4 text-base md:text-[16px]">
+              <div class="text-[#72E615] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 6.75V15m6-6v8.25m.503 3.446 5.25-2.25a.75.75 0 0 0 .447-.682V4.186a.75.75 0 0 0-1.018-.696L15 5.25a.75.75 0 0 1-.503 0l-5.25-2.25a.75.75 0 0 0-.54 0L3.447 5.25A.75.75 0 0 0 3 5.934v12.333a.75.75 0 0 0 1.018.696L9 17.25a.75.75 0 0 1 .503 0l5.25 2.25a.75.75 0 0 0 .54 0Z" />
+                </svg>
+              </div>
+              <span class="font-medium">55/10, Waturugama Road, Miriswatta</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4" data-reveal>
+          <div
+            class="border border-white/20 bg-white/5 rounded-2xl p-5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10">
+            <p class="font-semibold text-xl text-[#72E615] tracking-wide">Sulalinda Ranasinghe</p>
+            <p class="text-white/80 text-sm md:text-base mt-0.5">Chairman / Managing Director</p>
+          </div>
+
+          <div
+            class="border border-white/20 bg-white/5 rounded-2xl p-5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10">
+            <p class="font-semibold text-xl text-[#72E615] tracking-wide">Nihal Tissera</p>
+            <p class="text-white/80 text-sm md:text-base mt-0.5">GM - Sales &amp; Administration</p>
+          </div>
+
+          <div
+            class="border border-white/20 bg-white/5 rounded-2xl p-5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10">
+            <p class="font-semibold text-xl text-[#72E615] tracking-wide">Channa Wijewardana</p>
+            <p class="text-white/80 text-sm md:text-base mt-0.5">GM - Sales &amp; Distribution</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-ink-nav text-white py-6 text-center text-small">
+    <p>Copyright © 2026 Prime Agri Business &amp; Plantation. All rights reserved. Dev By <span
+        class="text-lime">ShalokaiStudio</span> International
+      (PVT) LTD</p>
+  </footer>
+
+  <!-- Video modal -->
+  <div id="video-modal" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 p-4" aria-hidden="true"
+    role="dialog" aria-label="Video">
+    <div class="relative w-full max-w-3xl aspect-video bg-black rounded-xl overflow-hidden">
+      <button id="video-close" type="button"
+        class="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-white/20 text-white hover:bg-white/40 transition-colors"
+        aria-label="Close">✕</button>
+      <iframe class="w-full h-full" src="about:blank" data-video-iframe title="Prime Agri video"
+        allowfullscreen></iframe>
+      <p class="absolute inset-0 flex items-center justify-center text-white/80 pointer-events-none">Video embed — add
+        your URL in main.js</p>
+    </div>
+  </div>
+
+  <div id="form-toast" class="form-toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

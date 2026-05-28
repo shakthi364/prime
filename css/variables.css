@@ -1,0 +1,61 @@
+/**
+ * Design tokens extracted from Figma file rO94bJ1KJDJbQHOtyfW3sn
+ * Values match fill_* and style_* definitions in the design.
+ */
+:root {
+  /* ── Colors (exact hex from Figma) ── */
+  --color-white: #ffffff;
+  --color-accent-lime: #7bf60d;
+  --color-primary-green: #288c2e;
+  --color-black: #000000;
+  --color-text-primary: #363333;
+  --color-text-muted: #6c726d;
+  --color-nav-text: #050505;
+  --color-surface-mint: #f4f9f5;
+  --color-card-mint: #f5ffed;
+  --color-icon-check: #d7ffb3;
+  --color-green-dark: #408700;
+  --color-green-mid: #499b00;
+  --color-gold: #edb500;
+  --color-input-bg: #efefef;
+  --color-placeholder: #bfbfbf;
+  --color-badge-bg: rgba(123, 246, 13, 0.21);
+  --color-plan-card-bg: rgba(123, 246, 13, 0.06);
+  --color-overlay-30: rgba(0, 0, 0, 0.3);
+  --color-hero-overlay: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6) 98%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  /* ── Typography families ── */
+  --font-poppins: "Poppins", system-ui, sans-serif;
+  --font-clash: "Clash Display", "Poppins", system-ui, sans-serif;
+
+  /* ── Font sizes (from Figma text styles) ── */
+  --text-hero: clamp(2.5rem, 5vw, 6rem);
+  --text-h1-section: clamp(1.75rem, 3vw, 2.375rem);
+  --text-h2: clamp(1.5rem, 2.5vw, 2.25rem);
+  --text-h3-card: clamp(1.75rem, 2.5vw, 2.75rem);
+  --text-body-lg: 1.25rem;
+  --text-body: 1rem;
+  --text-nav: 1.25rem;
+  --text-small: 0.875rem;
+  --text-caption: 0.75rem;
+
+  /* ── Line heights ── */
+  --leading-tight: 100%;
+  --leading-snug: 120%;
+
+  /* ── Spacing & layout ── */
+  --max-width: 108rem;
+  --header-height: 5rem;
+  --radius-nav-pill: 0.625rem;
+  --radius-card: 1.25rem;
+  --radius-image-organic: 6.25rem;
+
+  /* ── Shadows & effects ── */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
