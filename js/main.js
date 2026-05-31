@@ -56,126 +56,126 @@
   });
 
   document.addEventListener("DOMContentLoaded", () => {
-  const carousel = document.getElementById("services-carousel");
-  const carouselTrack = document.getElementById("services-track");
-  const desktopDots = document.querySelectorAll("[data-dot-desktop]");
-  const mobileDots = document.querySelectorAll("[data-dot-mobile]");
-  
-  if (!carouselTrack) return;
+    const carousel = document.getElementById("services-carousel");
+    const carouselTrack = document.getElementById("services-track");
+    const desktopDots = document.querySelectorAll("[data-dot-desktop]");
+    const mobileDots = document.querySelectorAll("[data-dot-mobile]");
 
-  const cards = carouselTrack.children;
-  let carouselIndex = 0;
-  let autoplay;
+    if (!carouselTrack) return;
 
-  function isMobile() {
-    return window.innerWidth < 1024; // lg breakpoint
-  }
+    const cards = carouselTrack.children;
+    let carouselIndex = 0;
+    let autoplay;
 
-  function goToSlide(index) {
-    if (isMobile()) {
-      // Mobile logic: 4 dots handles 6 cards smoothly step by step
-      carouselIndex = Math.max(0, Math.min(index, mobileDots.length - 1));
-      
-      // Calculate exact card offset to scroll
-      if (cards[carouselIndex]) {
-        const gap = 24; // Tailwind gap-6 is 24px
-        const cardWidth = cards[0].offsetWidth;
-        const shift = carouselIndex * (cardWidth + gap);
-        
-        carouselTrack.scrollTo({
-          left: shift,
-          behavior: 'smooth'
-        });
-      }
-      updateDots(mobileDots, carouselIndex);
-    } else {
-      // Desktop logic: 2 views (Dots 0 and 1)
-      carouselIndex = index === 1 ? 1 : 0;
-      
-      // Slide 1 shows cards 1,2,3. Slide 2 shifts to show 4,5,6 (index 3)
-      const shiftAmount = (carouselIndex === 1 && cards[2]) ? cards[2].offsetLeft : 0;
-      carouselTrack.style.transform = `translateX(-${shiftAmount}px)`;
-      
-      updateDots(desktopDots, carouselIndex);
+    function isMobile() {
+      return window.innerWidth < 1024; // lg breakpoint
     }
-  }
 
-  function updateDots(dotsGroup, activeIndex) {
-    dotsGroup.forEach((dot, i) => {
-      if (i === activeIndex) {
-        dot.classList.add("is-active", "bg-green-500");
-        dot.classList.remove("bg-gray-300");
-      } else {
-        dot.classList.remove("is-active", "bg-green-500");
-        dot.classList.add("bg-gray-300");
-      }
-    });
-  }
+    function goToSlide(index) {
+      if (isMobile()) {
+        // Mobile logic: 4 dots handles 6 cards smoothly step by step
+        carouselIndex = Math.max(0, Math.min(index, mobileDots.length - 1));
 
-  // Desktop dots click handler
-  desktopDots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      goToSlide(i);
-      resetAutoplay();
-    });
-  });
+        // Calculate exact card offset to scroll
+        if (cards[carouselIndex]) {
+          const gap = 24; // Tailwind gap-6 is 24px
+          const cardWidth = cards[0].offsetWidth;
+          const shift = carouselIndex * (cardWidth + gap);
 
-  // Mobile dots click handler
-  mobileDots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      goToSlide(i);
-      resetAutoplay();
-    });
-  });
-
-  // Autoplay Logic
-  function startAutoplay() {
-    autoplay = setInterval(() => {
-      const maxIndex = isMobile() ? mobileDots.length - 1 : 1;
-      let nextIndex = carouselIndex + 1;
-      if (nextIndex > maxIndex) nextIndex = 0;
-      goToSlide(nextIndex);
-    }, 5000);
-  }
-
-  function resetAutoplay() {
-    clearInterval(autoplay);
-    startAutoplay();
-  }
-
-  carousel.addEventListener("mouseenter", () => clearInterval(autoplay));
-  carousel.addEventListener("mouseleave", startAutoplay);
-
-  // Mobile touch swipe tracker to auto-light up mobile dots
-  let scrollTimeout;
-  carouselTrack.addEventListener("scroll", () => {
-    if (!isMobile()) return;
-    
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      const cardWidthWithGap = cards[0].offsetWidth + 24;
-      const currentIndex = Math.round(carouselTrack.scrollLeft / cardWidthWithGap);
-      const safeIndex = Math.min(currentIndex, mobileDots.length - 1);
-      
-      if (safeIndex !== carouselIndex) {
-        carouselIndex = safeIndex;
+          carouselTrack.scrollTo({
+            left: shift,
+            behavior: 'smooth'
+          });
+        }
         updateDots(mobileDots, carouselIndex);
+      } else {
+        // Desktop logic: 2 views (Dots 0 and 1)
+        carouselIndex = index === 1 ? 1 : 0;
+
+        // Slide 1 shows cards 1,2,3. Slide 2 shifts to show 4,5,6 (index 3)
+        const shiftAmount = (carouselIndex === 1 && cards[2]) ? cards[2].offsetLeft : 0;
+        carouselTrack.style.transform = `translateX(-${shiftAmount}px)`;
+
+        updateDots(desktopDots, carouselIndex);
       }
-    }, 100);
-  });
-
-  window.addEventListener("resize", () => {
-    if (!isMobile()) {
-      carouselTrack.style.transform = `translateX(0px)`;
     }
-    goToSlide(carouselIndex);
+
+    function updateDots(dotsGroup, activeIndex) {
+      dotsGroup.forEach((dot, i) => {
+        if (i === activeIndex) {
+          dot.classList.add("is-active", "bg-green-500");
+          dot.classList.remove("bg-gray-300");
+        } else {
+          dot.classList.remove("is-active", "bg-green-500");
+          dot.classList.add("bg-gray-300");
+        }
+      });
+    }
+
+    // Desktop dots click handler
+    desktopDots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        goToSlide(i);
+        resetAutoplay();
+      });
+    });
+
+    // Mobile dots click handler
+    mobileDots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        goToSlide(i);
+        resetAutoplay();
+      });
+    });
+
+    // Autoplay Logic
+    function startAutoplay() {
+      autoplay = setInterval(() => {
+        const maxIndex = isMobile() ? mobileDots.length - 1 : 1;
+        let nextIndex = carouselIndex + 1;
+        if (nextIndex > maxIndex) nextIndex = 0;
+        goToSlide(nextIndex);
+      }, 5000);
+    }
+
+    function resetAutoplay() {
+      clearInterval(autoplay);
+      startAutoplay();
+    }
+
+    carousel.addEventListener("mouseenter", () => clearInterval(autoplay));
+    carousel.addEventListener("mouseleave", startAutoplay);
+
+    // Mobile touch swipe tracker to auto-light up mobile dots
+    let scrollTimeout;
+    carouselTrack.addEventListener("scroll", () => {
+      if (!isMobile()) return;
+
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const cardWidthWithGap = cards[0].offsetWidth + 24;
+        const currentIndex = Math.round(carouselTrack.scrollLeft / cardWidthWithGap);
+        const safeIndex = Math.min(currentIndex, mobileDots.length - 1);
+
+        if (safeIndex !== carouselIndex) {
+          carouselIndex = safeIndex;
+          updateDots(mobileDots, carouselIndex);
+        }
+      }, 100);
+    });
+
+    window.addEventListener("resize", () => {
+      if (!isMobile()) {
+        carouselTrack.style.transform = `translateX(0px)`;
+      }
+      goToSlide(carouselIndex);
+    });
+
+    startAutoplay();
+    goToSlide(0);
   });
 
-  startAutoplay();
-  goToSlide(0);
-});
-
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     // අවශ්‍ය Elements තෝරාගැනීම
     const planCards = document.querySelectorAll('[data-plan-card]');
     const tierPanels = document.querySelectorAll('.tier-panel');
@@ -205,8 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
     planCards.forEach(card => {
       card.addEventListener('click', function (e) {
         // Button එකක් Click කළා නම් Page එක Scroll වීම නැවැත්වීමට (අවශ්‍ය නම් පමණක්)
-        e.preventDefault(); 
-        
+        e.preventDefault();
+
         const planId = this.getAttribute('data-plan-card');
 
         // 1. Cards වල Style වෙනස් කිරීම (Highlight කිරීම)
@@ -259,14 +259,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const videoModal = document.getElementById("video-modal");
   const videoOpen = document.getElementById("video-open");
   const videoClose = document.getElementById("video-close");
+  const videoIframe = document.querySelector("[data-video-iframe]");
+  const videoUrl = "https://www.youtube.com/embed/ovSBBaw8d3Q?autoplay=1&rel=0";
 
   videoOpen?.addEventListener("click", () => {
+    if (videoIframe) videoIframe.src = videoUrl;
     videoModal?.classList.add("is-open");
     videoModal?.setAttribute("aria-hidden", "false");
     document.body.classList.add("overflow-hidden");
   });
 
   const closeVideo = () => {
+    if (videoIframe) videoIframe.src = "about:blank";
     videoModal?.classList.remove("is-open");
     videoModal?.setAttribute("aria-hidden", "true");
     document.body.classList.remove("overflow-hidden");
